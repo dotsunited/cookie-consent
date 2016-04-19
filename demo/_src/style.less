@@ -1,0 +1,75 @@
+.cookie-consent {
+    box-sizing: border-box;
+    padding: 20px;
+    background: #f6f6f6;
+    border-top: 1px solid #ccc;
+
+    position: fixed;
+    z-index: 999999;
+    width: 100%;
+
+    bottom: 0;
+    left: 0;
+    transform: translate3d(0, 100%, 0);
+    transition: transform 350ms cubic-bezier(0.23, 1, 0.32, 1);
+
+    .no-csstransforms3d & {
+        // Reset transform in case Modernizr reports that 3d transforms are
+        // not supported (eg. if the implementation is buggy) but the
+        // browser _does_ support it (at least partially).
+        transform: translate3d(0, 0, 0);
+        bottom: -100%;
+        transition: bottom 350ms cubic-bezier(0.23, 1, 0.32, 1);
+    }
+}
+
+.cookie-consent--active {
+    display: block !important; // Overwrite possible style="display:none"
+}
+
+.cookie-consent--open {
+    transform: translate3d(0, 0, 0);
+
+    .no-csstransforms3d & {
+        // Reset transform in case Modernizr reports that 3d transforms are
+        // not supported (eg. if the implementation is buggy) but the
+        // browser _does_ support it (at least partially).
+        transform: translate3d(0, 0, 0);
+        bottom: 0;
+    }
+}
+
+.cookie-consent__title {
+    margin: 0;
+}
+
+.cookie-consent__text {
+    padding-right: 100px;
+
+    @media (max-width: 768px) {
+        padding-right: 0;
+    }
+}
+
+.cookie-consent__dismiss {
+    font-size: 20px;
+    padding: 6px 26px;
+    border: 1px solid #ccc;
+
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+
+    &::-moz-focus-inner {
+        border: 0;
+        padding: 0;
+    }
+
+    @media (max-width: 768px) {
+        position: static;
+        display: block;
+        margin: 20px 0 0 0;
+        transform: translateY(0);
+    }
+}
