@@ -49,7 +49,13 @@ webpackJsonp([1],[
 	        }, options || {});
 
 	        $(function() {
-	            var el = $(options.selector)
+	            var el = $(options.selector);
+
+	            if (!el.length) {
+	                return;
+	            }
+
+	            el
 	                .on('click', '[data-' + namespace + '-dismiss]', function(e) {
 	                    e.preventDefault();
 	                    el.removeClass(namespace + '--open');
@@ -63,7 +69,7 @@ webpackJsonp([1],[
 	                })
 	                .removeAttr('aria-hidden')
 	                .addClass(namespace + '--active')
-	                ;
+	            ;
 
 	            // Focus dismiss button in alertdialog
 	            el

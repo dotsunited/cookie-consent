@@ -73,7 +73,7 @@
 /******/ 			script.charset = 'utf-8';
 /******/ 			script.async = true;
 
-/******/ 			script.src = __webpack_require__.p + "demo." + ({}[chunkId]||chunkId) + ".js?" + {"1":"c961bd38c6933b2e2c21"}[chunkId] + "";
+/******/ 			script.src = __webpack_require__.p + "demo." + ({}[chunkId]||chunkId) + ".js?" + {"1":"f70b60a861d89970a497"}[chunkId] + "";
 /******/ 			head.appendChild(script);
 /******/ 		}
 /******/ 	};
