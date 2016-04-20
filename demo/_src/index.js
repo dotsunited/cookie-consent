@@ -6,8 +6,8 @@ var options = {
 };
 
 if (!check(namespace, options)) {
-    // Split code for displaying the consent alert into its own chunk which
-    // is only loaded if the check fails.
+    // Moves the JS and CSS required for showing the consent alert into its own
+    // chunk which is only loaded if the check() call returns false.
     require.ensure([
         '../../lib/show',
         './style.less'
